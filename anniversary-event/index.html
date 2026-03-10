@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aniversário Lucca - 19/06/2026</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#111;
+color:white;
+text-align:center;
+}
+
+header{
+padding:60px 20px;
+background:linear-gradient(45deg,#6a00ff,#ff00c8);
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+}
+
+#contador{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.tempo{
+background:#222;
+padding:20px;
+border-radius:10px;
+width:120px;
+}
+
+.tempo span{
+font-size:35px;
+display:block;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:40px;
+}
+
+.card{
+background:#222;
+padding:30px;
+border-radius:10px;
+width:300px;
+}
+
+button{
+background:#ff00c8;
+border:none;
+padding:15px 25px;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4fd8;
+}
+
+footer{
+padding:30px;
+background:#000;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:28px;
+}
+
+.container{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🎉 Meu Aniversário 🎉</h1>
+<p>Lucca Martinelli</p>
+<p>19 de Junho de 2026</p>
+
+<div id="contador">
+
+<div class="tempo">
+<span id="dias">0</span>
+Dias
+</div>
+
+<div class="tempo">
+<span id="horas">0</span>
+Horas
+</div>
+
+<div class="tempo">
+<span id="minutos">0</span>
+Min
+</div>
+
+<div class="tempo">
+<span id="segundos">0</span>
+Seg
+</div>
+
+</div>
+
+</header>
+
+<section class="container">
+
+<div class="card">
+<h2>📍 Local</h2>
+<p>Petrópolis - RJ</p>
+<p>Endereço enviado aos convidados</p>
+</div>
+
+<div class="card">
+<h2>⏰ Horário</h2>
+<p>19:00</p>
+<p>Venha comemorar comigo!</p>
+</div>
+
+<div class="card">
+<h2>🎵 O que vai ter</h2>
+<p>Música</p>
+<p>Comida</p>
+<p>Drinks</p>
+<p>Diversão</p>
+</div>
+
+</section>
+
+<section style="padding:40px">
+
+<h2>Confirme sua presença</h2>
+<br>
+<button>Confirmar Presença</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 - Aniversário Lucca</p>
+
+</footer>
+
+<script>
+
+const dataEvento = new Date("Jun 19, 2026 19:00:00").getTime();
+
+const contador = setInterval(function(){
+
+const agora = new Date().getTime();
+
+const distancia = dataEvento - agora;
+
+const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+document.getElementById("dias").innerHTML = dias;
+document.getElementById("horas").innerHTML = horas;
+document.getElementById("minutos").innerHTML = minutos;
+document.getElementById("segundos").innerHTML = segundos;
+
+},1000);
+
+</script>
+
+</body>
+</html>
